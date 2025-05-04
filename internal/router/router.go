@@ -8,6 +8,6 @@ import (
 )
 
 func CustomRouter() {
-	router := mux.NewRouter
+	router := mux.NewRouter()
 	log.Println(http.ListenAndServe(":8080", router))
 }

@@ -2,7 +2,8 @@ package main
 
 import (
 	"flag"
-	"log"
+
+	"github.com/shegai01/myProject/internal/logger"
 )
 
 var (
@@ -14,6 +15,9 @@ func init() {
 }
 func main() {
 	flag.Parse()
-
-	log.Println("server starting")
+	log, err := logger.ZapLog()
+	if err != nil {
+		return
+	}
+	log.Info("server starting")
 }

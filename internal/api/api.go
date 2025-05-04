@@ -1,9 +1,18 @@
 package api
 
+import (
+	"go.uber.org/zap"
+)
+
 type API struct {
+	config   *Config
+	logLevel *zap.SugaredLogger
 }
 
-func NewAPI() *API {
-	return &API{}
+func NewAPI(config *Config) *API {
+	return &API{
+		config:   config,
+		logLevel: &zap.SugaredLogger{},
+	}
 
 }
