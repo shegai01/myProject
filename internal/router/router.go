@@ -6,5 +6,7 @@ import (
 
 func CustomRouter() *mux.Router {
 	router := mux.NewRouter()
+
 	return router
+
 }

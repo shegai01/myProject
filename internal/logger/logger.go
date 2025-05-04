@@ -1,13 +1,13 @@
-package logger
+package zaplog
 
 import "go.uber.org/zap"
 
-func ZapLog() (*zap.SugaredLogger, error) {
+func ZapLog() *zap.SugaredLogger {
 	configLogger, err := zap.NewProduction()
 	if err != nil {
-		return nil, err
+		return nil
 	}
 	defer configLogger.Sync()
 
-	return configLogger.Sugar(), nil
+	return configLogger.Sugar()
 }
