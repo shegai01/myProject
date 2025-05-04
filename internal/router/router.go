@@ -1,13 +1,10 @@
 package router
 
 import (
-	"log"
-	"net/http"
-
 	"github.com/gorilla/mux"
 )
 
-func CustomRouter() {
+func CustomRouter() *mux.Router {
 	router := mux.NewRouter()
-	log.Println(http.ListenAndServe(":8080", router))
+	return router
 }

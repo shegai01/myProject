@@ -1,9 +1,11 @@
 package api
 
 type Config struct {
-	BindAddr string `toml:"bind_addr"`
+	BindAddr string `toml:"bind_addr" env:"bind_addr"`
 }
 
 func NewConfig() *Config {
-	return &Config{}
+	return &Config{
+		BindAddr: ":8080",
+	}
 }
